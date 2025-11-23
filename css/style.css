@@ -392,3 +392,69 @@ footer {
         font-size: 18px;
     }
 }
+
+/* ======== MODO OSCURO ======== */
+body {
+    background-color: #0D1117;
+    color: #C9D1D9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+h1, h2, h3, .seccion-titulo {
+    color: #E6EDF3;
+}
+
+a {
+    color: #58A6FF;
+    text-decoration: none;
+}
+a:hover {
+    color: #79C0FF;
+}
+
+.section-oscura {
+    background-color: #0D1117;
+    color: #C9D1D9;
+}
+
+.section-clara {
+    background-color: #161B22;
+    color: #C9D1D9;
+}
+
+.navbar {
+    background-color: #161B22 !important;
+}
+.nav-link {
+    color: #C9D1D9 !important;
+}
+.nav-link:hover {
+    color: #79C0FF !important;
+}
+
+.card {
+    background-color: #161B22 !important;
+    border: 1px solid #30363D;
+    color: #C9D1D9;
+}
+
+button,
+.btn-info {
+    background-color: #1F6FEB;
+    color: #FFFFFF;
+    border: none;
+}
+
+button:hover,
+.btn-info:hover {
+    background-color: #388BFF;
+}
+
+footer {
+    background-color: #0D1117;
+    color: #C9D1D9;
+}
+
+.footer-icon {
+    filter: brightness(90%);
+}
