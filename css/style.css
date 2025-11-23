@@ -1,63 +1,85 @@
+
 :root {
-    --color_0: #3F3D56;
-    --color_1: #6C63FF;
-    --color_2: #2F2E41;
-    --color_3: #CCCCCC;
-    --color_4: #FFB9B9;
+    --fondo: #0D1117
+    --fondo-secundario: #161B22;
+    --fondo-terciario: #1E2530;
+
+    --texto: #C9D1D9;
+    --texto-suave: #9AA4AE;
+
+    --borde: #30363D;
+
+    --azul-claro: #58A6FF;   /* azul GitHub */
+    --morado: #6C63FF;       /* tu morado */
 }
 
-/* Navbar */
+/* ==========================================================
+   ESTILOS GENERALES
+   ========================================================== */
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: var(--texto);
+}
+
+a {
+    color: var(--azul-claro);
+    text-decoration: none;
+}
+a:hover {
+    color: #79C0FF;
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 .navbar {
     padding: 2rem;
-    background-color: #f5f6f7;
+    background-color: var(--fondo-secundario);
+    border-bottom: 1px solid var(--borde);
 }
 
-.navbar-nav {
-    align-items: center;
+.nav-link {
+    color: var(--texto) !important;
+}
+.nav-link:hover {
+    color: var(--azul-claro) !important;
 }
 
-.navbar-collapse {
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* MyClass */
+/* ==========================================================
+   HEADER / MYCLASS
+   ========================================================== */
 .myclass {
-    background-color: #f5f6f7;
+    background-color: var(--fondo);
     min-height: 450px;
     text-align: center;
 }
 
-.myclass-main {
-    padding: 3rem;
-}
-
 .myclass-main h2 {
-    font-size: 1.5rem;
-    color: var(--color_1);
+    color: var(--morado);
 }
 
 .myclass-pic {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    margin: 20px;
 }
 
-
-.about-me {
-    height: 500px;
-    padding: 10px;
-}
-
+/* ==========================================================
+   SECCIONES
+   ========================================================== */
 .section-oscura {
-    color: white;
-    background-color: var(--color_0);
+    background-color: var(--fondo);
+    color: var(--texto);
 }
 
-.about-me .contenedor {
-    max-width: 600px;
-    text-align: center;
+.section-clara {
+    background-color: var(--fondo-secundario);
+    color: var(--texto);
 }
 
 .seccion-titulo {
@@ -65,396 +87,112 @@
     padding: 15px 0;
 }
 
-.seccion-texto {
-    font-size: 1.2rem;
+.seccion-descripcion {
+    color: var(--texto-suave);
 }
 
+/* ==========================================================
+   EXPERIENCIA
+   ========================================================== */
 .experiencia {
     padding: 40px;
 }
 
-.experiencia-columna:hover {
-    color: white;
-    background-color: var(--color_0);
-    border-radius: 5%;
+.experiencia-columna {
+    background-color: var(--fondo-secundario);
+    border: 1px solid var(--borde);
+    padding: 20px;
+    border-radius: 12px;
+    transition: all .3s ease;
 }
 
-.experiencia-title {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 10px 0;
+.experiencia-columna:hover {
+    background-color: var(--fondo-terciario);
+    color: var(--texto);
 }
 
 .experiencia i {
     font-size: 2.5rem;
-    color: var(--color_1);
-    background-color: var(--color_0);
+    color: var(--morado);
+    background-color: var(--fondo);
     padding: 8px 19px;
     border-radius: 25%;
 }
 
-.seccion-descripcion {
-    font-size: 1.2rem;
-    color: var(--color_0);
-}
-
-.section-clara {
-    color: var(--color_2);
-    background-color: white;
-}
-
-.badge-contenedor {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.badge {
-    margin: 5px;
-}
-
-.proyectos {
-    padding: 40px;
-}
-
+/* ==========================================================
+   PROYECTOS
+   ========================================================== */
 .proyectos img {
-    height: 100%;
-    width: 100%;
-    padding: 10px;
     border-radius: 10px;
-    display: block;
-    transition: all 0.2s ease;
+    transition: .2s ease;
 }
 
-.proyectos-contenedor {
-    padding-top: 60px;
-    margin-bottom: 40px;
+.proyecto:hover img {
+    opacity: .3;
 }
 
 .overlay {
-    transition: all 0.2s ease;
     opacity: 0;
+    transition: .2s ease;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    color: var(--texto);
 }
 
-.overlay p {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.overlay i {
-    color: #2F2E41;
-    font-size: 60px;
-    margin: 10px;
-}
-
-.proyecto {
-    position: relative;
-}
-
-.proyecto:hover img {
-    opacity: 0.2;
-}
-
-.proyecto:hover .overlay{
+.proyecto:hover .overlay {
     opacity: 1;
 }
 
-/* Others */
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
+/* ==========================================================
+   BOTONES
+   ========================================================== */
 .btn-info {
-    background-color: #2F2E41;
-    color: #6C63FF;
-    border: #2F2E41;
+    background-color: var(--morado);
+    color: white;
+    border: none;
     font-size: 1.1rem;
-    margin: 20px;
-    font-weight: bold;    
+    padding: 10px 20px;
 }
 
 .btn-info:hover {
-    background-color: #6C63FF;
-    color:  #2F2E41;
-    border: #6C63FF;
+    background-color: #7D72FF;
 }
 
-.tips {
-    min-height: 500px;
-    padding: 30px;
-}
-
-.tips .card {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px;
-}
-
-.tips .card-header {
-    font-weight: bold;
-}
-
-.recomendaciones {
-    padding: 40px 40px 80px 40px;
-}
-
-.recomendaciones .carousel {
-    max-width: 800px;
-    color:#6C63FF
-}
-
-.carousel-item {
-    height: 500px;
-}
-
-.carousel-item .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.recomendacion-imagen {
-    height: 150px;
-    width: 150px;
-    margin: 10px 10px 20px 10px;
-}
-
-.recomendacion-texto {
-    max-width: 70%;
-    font-size: 20px;
-    text-align: center;
-    color: #3F3D56;
-}
-
-.recomendacion-info {
-    font-weight: bold;
-    text-align: center;
-}
-
-.recomendacion-info p {
-    margin-bottom: 0;
-}
-
-.recomendacion-info .amigo {
-    color: #2F2E41;
-    font-size: 1.2rem;
-}
-
-.recomendacion-info .cargo {
-    color: #3F3D56;
-    font-size: 0.9rem;
-}
-
-.contact .container {
-    max-width: 1100px;
-    min-height: 200px;
-    padding: 20px;
-}
-
+/* ==========================================================
+   CONTACTO
+   ========================================================== */
 .contact .rectangulo {
-    margin-top: -5rem;
-    background-color: var(--color_1);
-    border-radius: 10px;
-    box-shadow: 0px 1px 4px 1px var(--color_3);
-}
-
-.contact .row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.contact .description {
-    color:  var(--color_3);
-    font-size: 1.2rem;
+    background-color: var(--morado);
+    color: white;
+    border-radius: 12px;
 }
 
 .contact button {
-    color:  var(--color_3);
-    font-weight: bold;
     background-color: transparent;
-    border: 2px solid var(--color_3);
-    padding: 1.25em 2em;
-    margin: 10px;
+    color: var(--texto);
+    border: 2px solid var(--texto-suave);
     border-radius: 100px;
-    transition: all 0.2s ease-in-out;
-}
-
-.contact button i {
-    color:  var(--color_3);
-    font-size: 1.3rem;
-    transition: all 0.2s ease-in-out;
+    padding: 1em 2em;
 }
 
 .contact button:hover {
-    background-color:  var(--color_0);
+    background-color: var(--fondo-secundario);
 }
 
+/* ==========================================================
+   FOOTER
+   ========================================================== */
 footer {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-icon {
-    height: 80px;
-    width: 80px;
-    margin: 10px;
-}
-
-.footer-text {
-    font-size: 1.5rem;
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-.icons-sn a {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    margin: 10px;
-    border: 2px solid var(--color_3);
-    border-radius: 50%;
-    transition: all 0.2s ease-in;
-}
-
-.icons-sn i {
-    color:  var(--color_3);
-    font-size: 1.5rem;
-    transition: all 0.2s ease-in;
-} 
-
-.icons-sn a:hover {
-    background-color: var(--color_3);
-}
-
-.icons-sn a:hover i {
-    color: var(--color_0);
-}
-
-.author {
-    font-size: 15px;
-    color: var(--color_4);
-    padding: 20px;
-}
-
-
-/* Responsive */
-
-@media screen and (max-width: 400px) {
-    .overlay p {
-        font-size: 18px;
-    }
-    .overlay i {
-        font-size: 40px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .myclass-imagen {
-        max-width: 600px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .navbar-brand {
-        display: none;
-    }
-    
-}
-
-@media screen and (max-width: 800px) {
-    .recomendacion-imagen {
-        height: 120px;
-        width: 120px;
-    }
-    .recomendacion-texto {
-        font-size: 18px;
-    }
-}
-
-/* ======== MODO OSCURO ======== */
-body {
-    background-color: #0D1117;
-    color: #C9D1D9;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-h1, h2, h3, .seccion-titulo {
-    color: #E6EDF3;
-}
-
-a {
-    color: #58A6FF;
-    text-decoration: none;
-}
-a:hover {
-    color: #79C0FF;
-}
-
-.section-oscura {
-    background-color: #0D1117;
-    color: #C9D1D9;
-}
-
-.section-clara {
-    background-color: #161B22;
-    color: #C9D1D9;
-}
-
-.navbar {
-    background-color: #161B22 !important;
-}
-.nav-link {
-    color: #C9D1D9 !important;
-}
-.nav-link:hover {
-    color: #79C0FF !important;
-}
-
-.card {
-    background-color: #161B22 !important;
-    border: 1px solid #30363D;
-    color: #C9D1D9;
-}
-
-button,
-.btn-info {
-    background-color: #1F6FEB;
-    color: #FFFFFF;
-    border: none;
-}
-
-button:hover,
-.btn-info:hover {
-    background-color: #388BFF;
-}
-
-footer {
-    background-color: #0D1117;
-    color: #C9D1D9;
+    background-color: var(--fondo);
+    border-top: 1px solid var(--borde);
 }
 
 .footer-icon {
     filter: brightness(90%);
+}
+
+.author {
+    color: var(--texto-suave);
 }
