@@ -1,33 +1,30 @@
 :root {
-    --color_0: #1E1E2F; /* Fondo oscuro principal */
-    --color_1: #6C63FF; /* Acento morado */
-    --color_2: #CCCCCC; /* Texto claro */
-    --color_3: #444444; /* Bordes y sombras */
-    --color_4: #FFB9B9; /* Detalles rosados */
-    --color-blanco: #000000; /* Antes blanco, ahora negro */
+    --color-bg: #121212;       /* Fondo general */
+    --color-card: #1E1E1E;     /* Fondos de secciones y cards */
+    --color-accent: #6C63FF;   /* Acento morado */
+    --color-text: #FFFFFF;     /* Texto principal */
+    --color-subtext: #CCCCCC;  /* Texto secundario */
+    --color-border: #333333;   /* Bordes y sombras */
 }
 
 /* Navbar */
 .navbar {
     padding: 2rem;
-    background-color: var(--color_0);
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
 
-.navbar-nav {
-    align-items: center;
-}
-
-.navbar-collapse {
+.navbar-nav, .navbar-collapse {
     align-items: center;
     justify-content: space-between;
 }
 
-/* MyClass */
+/* Sección principal */
 .myclass {
-    background-color: var(--color-blanco);
+    background-color: var(--color-bg);
     min-height: 450px;
     text-align: center;
-    color: var(--color_2);
+    color: var(--color-text);
 }
 
 .myclass-main {
@@ -36,7 +33,7 @@
 
 .myclass-main h2 {
     font-size: 1.5rem;
-    color: var(--color-1);
+    color: var(--color-accent);
 }
 
 .myclass-pic {
@@ -44,22 +41,25 @@
     height: 200px;
     border-radius: 50%;
     margin: 20px;
+    border: 3px solid var(--color-accent);
 }
 
 /* About Me */
 .about-me {
     height: 500px;
     padding: 10px;
+    background-color: var(--color-card);
+    color: var(--color-text);
 }
 
 .section-oscura {
-    color: var(--color-2);
-    background-color: var(--color_0);
+    color: var(--color-text);
+    background-color: var(--color-bg);
 }
 
-.about-me .contenedor {
-    max-width: 600px;
-    text-align: center;
+.section-clara {
+    color: var(--color-text);
+    background-color: var(--color-card);
 }
 
 .seccion-titulo {
@@ -69,15 +69,19 @@
 
 .seccion-texto {
     font-size: 1.2rem;
+    color: var(--color-subtext);
 }
 
+/* Experiencia */
 .experiencia {
     padding: 40px;
+    background-color: var(--color-card);
+    color: var(--color-text);
 }
 
 .experiencia-columna:hover {
-    color: var(--color-2);
-    background-color: var(--color_0);
+    color: var(--color-text);
+    background-color: #2A2A2A;
     border-radius: 5%;
 }
 
@@ -89,35 +93,16 @@
 
 .experiencia i {
     font-size: 2.5rem;
-    color: var(--color-1);
-    background-color: var(--color_0);
+    color: var(--color-accent);
+    background-color: var(--color-bg);
     padding: 8px 19px;
     border-radius: 25%;
-}
-
-.seccion-descripcion {
-    font-size: 1.2rem;
-    color: var(--color-2);
-}
-
-.section-clara {
-    color: var(--color-2);
-    background-color: var(--color-blanco);
-}
-
-.badge-contenedor {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.badge {
-    margin: 5px;
 }
 
 /* Proyectos */
 .proyectos {
     padding: 40px;
+    background-color: var(--color-bg);
 }
 
 .proyectos img {
@@ -126,7 +111,7 @@
     padding: 10px;
     border-radius: 10px;
     display: block;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .proyectos-contenedor {
@@ -135,14 +120,14 @@
 }
 
 .overlay {
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: var(--color-2);
+    color: var(--color-text);
 }
 
 .overlay p {
@@ -152,13 +137,9 @@
 }
 
 .overlay i {
-    color: var(--color-2);
     font-size: 60px;
     margin: 10px;
-}
-
-.proyecto {
-    position: relative;
+    color: var(--color-accent);
 }
 
 .proyecto:hover img {
@@ -169,34 +150,23 @@
     opacity: 1;
 }
 
-/* Otros */
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-}
-
-h1 {
-    font-size: 2.5rem;
-    color: var(--color-2);
-}
-
+/* Botones */
 .btn-info {
-    background-color: var(--color_0);
-    color: var(--color-1);
-    border: var(--color_0);
+    background-color: var(--color-bg);
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
     font-size: 1.1rem;
     margin: 20px;
     font-weight: bold;    
 }
 
 .btn-info:hover {
-    background-color: var(--color-1);
-    color: var(--color_0);
-    border: var(--color-1);
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    border: 2px solid var(--color-accent);
 }
 
+/* Tips y Cards */
 .tips {
     min-height: 500px;
     padding: 30px;
@@ -206,8 +176,9 @@ h1 {
     width: 80%;
     max-width: 600px;
     margin: 20px;
-    background-color: var(--color_0);
-    color: var(--color-2);
+    background-color: var(--color-card);
+    color: var(--color-text);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .tips .card-header {
@@ -217,56 +188,24 @@ h1 {
 /* Recomendaciones */
 .recomendaciones {
     padding: 40px 40px 80px 40px;
+    background-color: var(--color-bg);
 }
 
 .recomendaciones .carousel {
     max-width: 800px;
-    color: var(--color-2);
-}
-
-.carousel-item {
-    height: 500px;
-}
-
-.carousel-item .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.recomendacion-imagen {
-    height: 150px;
-    width: 150px;
-    margin: 10px 10px 20px 10px;
+    color: var(--color-text);
 }
 
 .recomendacion-texto {
     max-width: 70%;
     font-size: 20px;
     text-align: center;
-    color: var(--color-2);
+    color: var(--color-subtext);
 }
 
-.recomendacion-info {
-    font-weight: bold;
-    text-align: center;
-}
-
-.recomendacion-info p {
-    margin-bottom: 0;
-}
-
-.recomendacion-info .amigo {
-    color: var(--color-2);
-    font-size: 1.2rem;
-}
-
+.recomendacion-info .amigo, 
 .recomendacion-info .cargo {
-    color: var(--color-2);
-    font-size: 0.9rem;
+    color: var(--color-text);
 }
 
 /* Contact */
@@ -278,41 +217,29 @@ h1 {
 
 .contact .rectangulo {
     margin-top: -5rem;
-    background-color: var(--color_1);
+    background-color: var(--color-accent);
     border-radius: 10px;
-    box-shadow: 0px 1px 4px 1px var(--color_3);
-}
-
-.contact .row {
-    width: 100%;
-    display: flex;
-    align-items: center;
+    box-shadow: 0px 1px 4px 1px var(--color-border);
 }
 
 .contact .description {
-    color: var(--color-2);
+    color: var(--color-text);
     font-size: 1.2rem;
 }
 
 .contact button {
-    color: var(--color-2);
+    color: var(--color-text);
     font-weight: bold;
     background-color: transparent;
-    border: 2px solid var(--color-2);
+    border: 2px solid var(--color-text);
     padding: 1.25em 2em;
     margin: 10px;
     border-radius: 100px;
-    transition: all 0.2s ease-in-out;
-}
-
-.contact button i {
-    color: var(--color-2);
-    font-size: 1.3rem;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .contact button:hover {
-    background-color: var(--color_0);
+    background-color: var(--color-card);
 }
 
 /* Footer */
@@ -321,20 +248,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color_0);
-    color: var(--color-2);
-}
-
-.footer-icon {
-    height: 80px;
-    width: 80px;
-    margin: 10px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
 
 .footer-text {
     font-size: 1.5rem;
     padding: 20px;
-    margin-bottom: 30px;
 }
 
 .icons-sn a {
@@ -345,50 +265,28 @@ footer {
     justify-content: center;
     padding: 2px;
     margin: 10px;
-    border: 2px solid var(--color-3);
+    border: 2px solid var(--color-border);
     border-radius: 50%;
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .icons-sn i {
-    color: var(--color-2);
+    color: var(--color-text);
     font-size: 1.5rem;
-    transition: all 0.2s ease-in;
-} 
+}
 
 .icons-sn a:hover {
-    background-color: var(--color-3);
+    background-color: var(--color-border);
 }
 
 .icons-sn a:hover i {
-    color: var(--color-0);
-}
-
-.author {
-    font-size: 15px;
-    color: var(--color-4);
-    padding: 20px;
+    color: var(--color-accent);
 }
 
 /* Responsive */
-@media screen and (max-width: 400px) {
-    .overlay p {
-        font-size: 18px;
-    }
-    .overlay i {
-        font-size: 40px;
-    }
-}
-
 @media screen and (max-width: 700px) {
     .myclass-imagen {
         max-width: 600px;
-    }
-}
-
-@media screen and (max-width: 767px) {
-    .navbar-brand {
-        display: none;
     }
 }
 
@@ -401,3 +299,4 @@ footer {
         font-size: 18px;
     }
 }
+
