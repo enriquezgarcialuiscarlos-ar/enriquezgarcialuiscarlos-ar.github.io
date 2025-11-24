@@ -1,15 +1,16 @@
 :root {
-    --color_0: #3F3D56;
-    --color_1: #6C63FF;
-    --color_2: #2F2E41;
-    --color_3: #CCCCCC;
-    --color_4: #FFB9B9;
+    --color_0: #1E1E2F; /* Fondo oscuro principal */
+    --color_1: #6C63FF; /* Acento morado */
+    --color_2: #CCCCCC; /* Texto claro */
+    --color_3: #444444; /* Bordes y sombras */
+    --color_4: #FFB9B9; /* Detalles rosados */
+    --color-blanco: #000000; /* Antes blanco, ahora negro */
 }
 
 /* Navbar */
 .navbar {
     padding: 2rem;
-    background-color: #f5f6f7;
+    background-color: var(--color_0);
 }
 
 .navbar-nav {
@@ -23,9 +24,10 @@
 
 /* MyClass */
 .myclass {
-    background-color: #f5f6f7;
+    background-color: var(--color-blanco);
     min-height: 450px;
     text-align: center;
+    color: var(--color_2);
 }
 
 .myclass-main {
@@ -34,7 +36,7 @@
 
 .myclass-main h2 {
     font-size: 1.5rem;
-    color: var(--color_1);
+    color: var(--color-1);
 }
 
 .myclass-pic {
@@ -44,14 +46,14 @@
     margin: 20px;
 }
 
-
+/* About Me */
 .about-me {
     height: 500px;
     padding: 10px;
 }
 
 .section-oscura {
-    color: white;
+    color: var(--color-2);
     background-color: var(--color_0);
 }
 
@@ -74,7 +76,7 @@
 }
 
 .experiencia-columna:hover {
-    color: white;
+    color: var(--color-2);
     background-color: var(--color_0);
     border-radius: 5%;
 }
@@ -87,7 +89,7 @@
 
 .experiencia i {
     font-size: 2.5rem;
-    color: var(--color_1);
+    color: var(--color-1);
     background-color: var(--color_0);
     padding: 8px 19px;
     border-radius: 25%;
@@ -95,12 +97,12 @@
 
 .seccion-descripcion {
     font-size: 1.2rem;
-    color: var(--color_0);
+    color: var(--color-2);
 }
 
 .section-clara {
-    color: var(--color_2);
-    background-color: white;
+    color: var(--color-2);
+    background-color: var(--color-blanco);
 }
 
 .badge-contenedor {
@@ -113,6 +115,7 @@
     margin: 5px;
 }
 
+/* Proyectos */
 .proyectos {
     padding: 40px;
 }
@@ -139,6 +142,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    color: var(--color-2);
 }
 
 .overlay p {
@@ -148,7 +152,7 @@
 }
 
 .overlay i {
-    color: #2F2E41;
+    color: var(--color-2);
     font-size: 60px;
     margin: 10px;
 }
@@ -161,11 +165,11 @@
     opacity: 0.2;
 }
 
-.proyecto:hover .overlay{
+.proyecto:hover .overlay {
     opacity: 1;
 }
 
-/* Others */
+/* Otros */
 section {
     display: flex;
     flex-direction: column;
@@ -175,21 +179,22 @@ section {
 
 h1 {
     font-size: 2.5rem;
+    color: var(--color-2);
 }
 
 .btn-info {
-    background-color: #2F2E41;
-    color: #6C63FF;
-    border: #2F2E41;
+    background-color: var(--color_0);
+    color: var(--color-1);
+    border: var(--color_0);
     font-size: 1.1rem;
     margin: 20px;
     font-weight: bold;    
 }
 
 .btn-info:hover {
-    background-color: #6C63FF;
-    color:  #2F2E41;
-    border: #6C63FF;
+    background-color: var(--color-1);
+    color: var(--color_0);
+    border: var(--color-1);
 }
 
 .tips {
@@ -201,19 +206,22 @@ h1 {
     width: 80%;
     max-width: 600px;
     margin: 20px;
+    background-color: var(--color_0);
+    color: var(--color-2);
 }
 
 .tips .card-header {
     font-weight: bold;
 }
 
+/* Recomendaciones */
 .recomendaciones {
     padding: 40px 40px 80px 40px;
 }
 
 .recomendaciones .carousel {
     max-width: 800px;
-    color:#6C63FF
+    color: var(--color-2);
 }
 
 .carousel-item {
@@ -239,7 +247,7 @@ h1 {
     max-width: 70%;
     font-size: 20px;
     text-align: center;
-    color: #3F3D56;
+    color: var(--color-2);
 }
 
 .recomendacion-info {
@@ -252,15 +260,16 @@ h1 {
 }
 
 .recomendacion-info .amigo {
-    color: #2F2E41;
+    color: var(--color-2);
     font-size: 1.2rem;
 }
 
 .recomendacion-info .cargo {
-    color: #3F3D56;
+    color: var(--color-2);
     font-size: 0.9rem;
 }
 
+/* Contact */
 .contact .container {
     max-width: 1100px;
     min-height: 200px;
@@ -281,15 +290,15 @@ h1 {
 }
 
 .contact .description {
-    color:  var(--color_3);
+    color: var(--color-2);
     font-size: 1.2rem;
 }
 
 .contact button {
-    color:  var(--color_3);
+    color: var(--color-2);
     font-weight: bold;
     background-color: transparent;
-    border: 2px solid var(--color_3);
+    border: 2px solid var(--color-2);
     padding: 1.25em 2em;
     margin: 10px;
     border-radius: 100px;
@@ -297,20 +306,23 @@ h1 {
 }
 
 .contact button i {
-    color:  var(--color_3);
+    color: var(--color-2);
     font-size: 1.3rem;
     transition: all 0.2s ease-in-out;
 }
 
 .contact button:hover {
-    background-color:  var(--color_0);
+    background-color: var(--color_0);
 }
 
+/* Footer */
 footer {
     min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--color_0);
+    color: var(--color-2);
 }
 
 .footer-icon {
@@ -333,34 +345,32 @@ footer {
     justify-content: center;
     padding: 2px;
     margin: 10px;
-    border: 2px solid var(--color_3);
+    border: 2px solid var(--color-3);
     border-radius: 50%;
     transition: all 0.2s ease-in;
 }
 
 .icons-sn i {
-    color:  var(--color_3);
+    color: var(--color-2);
     font-size: 1.5rem;
     transition: all 0.2s ease-in;
 } 
 
 .icons-sn a:hover {
-    background-color: var(--color_3);
+    background-color: var(--color-3);
 }
 
 .icons-sn a:hover i {
-    color: var(--color_0);
+    color: var(--color-0);
 }
 
 .author {
     font-size: 15px;
-    color: var(--color_4);
+    color: var(--color-4);
     padding: 20px;
 }
 
-
 /* Responsive */
-
 @media screen and (max-width: 400px) {
     .overlay p {
         font-size: 18px;
@@ -380,7 +390,6 @@ footer {
     .navbar-brand {
         display: none;
     }
-    
 }
 
 @media screen and (max-width: 800px) {
@@ -392,71 +401,3 @@ footer {
         font-size: 18px;
     }
 }
-
-/* ======== MODO OSCURO ======== */
-body {
-    background-color: #0D1117;
-    color: #C9D1D9;
-    font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-h1, h2, h3, .seccion-titulo {
-    color: #E6EDF3;
-}
-
-a {
-    color: #58A6FF;
-    text-decoration: none;
-}
-a:hover {
-    color: #79C0FF;
-}
-
-.section-oscura {
-    background-color: #0D1117;
-    color: #C9D1D9;
-}
-
-.section-clara {
-    background-color: #161B22;
-    color: #C9D1D9;
-}
-
-.navbar {
-    background-color: #161B22 !important;
-}
-.nav-link {
-    color: #C9D1D9 !important;
-}
-.nav-link:hover {
-    color: #79C0FF !important;
-}
-
-.card {
-    background-color: #161B22 !important;
-    border: 1px solid #30363D;
-    color: #C9D1D9;
-}
-
-button,
-.btn-info {
-    background-color: #1F6FEB;
-    color: #FFFFFF;
-    border: none;
-}
-
-button:hover,
-.btn-info:hover {
-    background-color: #388BFF;
-}
-
-footer {
-    background-color: #0D1117;
-    color: #C9D1D9;
-}
-
-.footer-icon {
-    filter: brightness(90%);
-}
-
-
