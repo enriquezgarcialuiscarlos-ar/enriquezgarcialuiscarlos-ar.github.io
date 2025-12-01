@@ -1,302 +1,245 @@
 :root {
-    --color-bg: #121212;       /* Fondo general */
-    --color-card: #1E1E1E;     /* Fondos de secciones y cards */
-    --color-accent: #6C63FF;   /* Acento morado */
-    --color-text: #FFFFFF;     /* Texto principal */
-    --color-subtext: #CCCCCC;  /* Texto secundario */
-    --color-border: #333333;   /* Bordes y sombras */
+    --bg-main: #0A0A0F;
+    --bg-card: #12121A;
+    --bg-floating: rgba(18, 18, 26, 0.7);
+    --text-main: #E8E8E8;
+    --text-soft: #B8B8C8;
+    --accent: #00E5FF;
+    --accent2: #4D7CFF;
+    --border: #1E1E2A;
+    --shadow: rgba(0, 229, 255, 0.1);
 }
 
-/* Navbar */
+/* ================================
+   BODY
+   ================================ */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================
+   NAVBAR GLASSMORPHISM
+   ================================ */
 .navbar {
-    padding: 2rem;
-    background-color: var(--color-bg);
-    color: var(--color-text);
+    background: var(--bg-floating);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-.navbar-nav, .navbar-collapse {
-    align-items: center;
-    justify-content: space-between;
+.navbar a {
+    color: var(--text-main);
+    margin-left: 20px;
+    font-size: 1.1rem;
+    transition: .3s;
 }
 
-/* Sección principal */
+.navbar a:hover {
+    color: var(--accent);
+    text-shadow: 0px 0px 10px var(--accent);
+}
+
+/* ================================
+   SECCIÓN PRINCIPAL
+   ================================ */
 .myclass {
-    background-color: var(--color-bg);
-    min-height: 450px;
     text-align: center;
-    color: var(--color-text);
-}
-
-.myclass-main {
-    padding: 3rem;
+    padding: 3rem 1rem;
 }
 
 .myclass-main h2 {
-    font-size: 1.5rem;
-    color: var(--color-accent);
+    color: var(--accent);
+    font-size: 2rem;
 }
 
 .myclass-pic {
     width: 200px;
     height: 200px;
+    margin: 20px auto;
     border-radius: 50%;
-    margin: 20px;
-    border: 3px solid var(--color-accent);
+    border: 4px solid var(--accent);
+    box-shadow: 0px 0px 20px rgba(0, 229, 255, 0.25);
 }
 
-/* About Me */
+/* ================================
+   ABOUT ME
+   ================================ */
 .about-me {
-    height: 500px;
-    padding: 10px;
-    background-color: var(--color-card);
-    color: var(--color-text);
-}
-
-.section-oscura {
-    color: var(--color-text);
-    background-color: var(--color-bg);
-}
-
-.section-clara {
-    color: var(--color-text);
-    background-color: var(--color-card);
+    background-color: var(--bg-card);
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin: 30px auto;
+    width: 90%;
+    box-shadow: 0 0 25px var(--shadow);
 }
 
 .seccion-titulo {
-    font-size: 2rem;
-    padding: 15px 0;
+    font-size: 2.2rem;
+    color: var(--accent2);
+    text-align: center;
 }
 
 .seccion-texto {
+    margin-top: 15px;
     font-size: 1.2rem;
-    color: var(--color-subtext);
+    color: var(--text-soft);
+    line-height: 1.8;
 }
 
-/* Experiencia */
+/* ================================
+   EXPERIENCIA
+   ================================ */
 .experiencia {
     padding: 40px;
-    background-color: var(--color-card);
-    color: var(--color-text);
+    background-color: var(--bg-main);
+}
+
+.experiencia-columna {
+    background-color: var(--bg-card);
+    padding: 25px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
 }
 
 .experiencia-columna:hover {
-    color: var(--color-text);
-    background-color: #2A2A2A;
-    border-radius: 5%;
-}
-
-.experiencia-title {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 10px 0;
+    background-color: #1B1B26;
+    box-shadow: 0px 0px 20px var(--shadow);
 }
 
 .experiencia i {
-    font-size: 2.5rem;
-    color: var(--color-accent);
-    background-color: var(--color-bg);
-    padding: 8px 19px;
-    border-radius: 25%;
+    color: var(--accent);
+    font-size: 2.8rem;
+    margin-bottom: 15px;
 }
 
-/* Proyectos */
+/* ================================
+   PROYECTOS
+   ================================ */
 .proyectos {
     padding: 40px;
-    background-color: var(--color-bg);
+}
+
+.proyecto {
+    position: relative;
 }
 
 .proyectos img {
-    height: 100%;
     width: 100%;
-    padding: 10px;
     border-radius: 10px;
-    display: block;
-    transition: all 0.3s ease;
-}
-
-.proyectos-contenedor {
-    padding-top: 60px;
-    margin-bottom: 40px;
+    transition: 0.3s ease;
+    opacity: 0.95;
 }
 
 .overlay {
-    transition: all 0.3s ease;
-    opacity: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: .4s;
     text-align: center;
-    color: var(--color-text);
-}
-
-.overlay p {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 0;
-}
-
-.overlay i {
-    font-size: 60px;
-    margin: 10px;
-    color: var(--color-accent);
+    color: var(--accent);
 }
 
 .proyecto:hover img {
-    opacity: 0.2;
+    opacity: 0.25;
 }
 
 .proyecto:hover .overlay {
     opacity: 1;
 }
 
-/* Botones */
+/* ================================
+   BOTONES
+   ================================ */
 .btn-info {
-    background-color: var(--color-bg);
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
-    font-size: 1.1rem;
-    margin: 20px;
-    font-weight: bold;    
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: .3s;
 }
 
 .btn-info:hover {
-    background-color: var(--color-accent);
-    color: var(--color-bg);
-    border: 2px solid var(--color-accent);
+    background-color: var(--accent);
+    color: #000;
+    box-shadow: 0px 0px 15px var(--accent);
 }
 
-/* Tips y Cards */
-.tips {
-    min-height: 500px;
-    padding: 30px;
-}
-
+/* ================================
+   CARDS
+   ================================ */
 .tips .card {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px;
-    background-color: var(--color-card);
-    color: var(--color-text);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-}
-
-.tips .card-header {
-    font-weight: bold;
-}
-
-/* Recomendaciones */
-.recomendaciones {
-    padding: 40px 40px 80px 40px;
-    background-color: var(--color-bg);
-}
-
-.recomendaciones .carousel {
-    max-width: 800px;
-    color: var(--color-text);
-}
-
-.recomendacion-texto {
-    max-width: 70%;
-    font-size: 20px;
-    text-align: center;
-    color: var(--color-subtext);
-}
-
-.recomendacion-info .amigo, 
-.recomendacion-info .cargo {
-    color: var(--color-text);
-}
-
-/* Contact */
-.contact .container {
-    max-width: 1100px;
-    min-height: 200px;
-    padding: 20px;
-}
-
-.contact .rectangulo {
-    margin-top: -5rem;
-    background-color: var(--color-accent);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: 0px 0px 15px var(--shadow);
     border-radius: 10px;
-    box-shadow: 0px 1px 4px 1px var(--color-border);
 }
 
-.contact .description {
-    color: var(--color-text);
-    font-size: 1.2rem;
+/* ================================
+   CONTACTO
+   ================================ */
+.contact .rectangulo {
+    background-color: var(--accent2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(77, 124, 255, 0.25);
 }
 
 .contact button {
-    color: var(--color-text);
-    font-weight: bold;
-    background-color: transparent;
-    border: 2px solid var(--color-text);
-    padding: 1.25em 2em;
-    margin: 10px;
+    color: var(--text-main);
+    border: 2px solid var(--text-main);
+    padding: 1.2em 2em;
     border-radius: 100px;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s;
 }
 
 .contact button:hover {
-    background-color: var(--color-card);
+    background-color: var(--bg-card);
 }
 
-/* Footer */
+/* ================================
+   FOOTER
+   ================================ */
 footer {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-}
-
-.footer-text {
-    font-size: 1.5rem;
-    padding: 20px;
+    background-color: var(--bg-main);
+    padding: 50px;
+    text-align: center;
 }
 
 .icons-sn a {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    margin: 10px;
-    border: 2px solid var(--color-border);
+    border: 2px solid var(--border);
     border-radius: 50%;
-    transition: all 0.3s ease-in;
-}
-
-.icons-sn i {
-    color: var(--color-text);
-    font-size: 1.5rem;
+    padding: 12px;
+    transition: 0.3s;
 }
 
 .icons-sn a:hover {
-    background-color: var(--color-border);
+    background-color: var(--border);
 }
 
 .icons-sn a:hover i {
-    color: var(--color-accent);
+    color: var(--accent);
 }
 
-/* Responsive */
+/* ================================
+   RESPONSIVO
+   ================================ */
 @media screen and (max-width: 700px) {
-    .myclass-imagen {
-        max-width: 600px;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .recomendacion-imagen {
-        height: 120px;
-        width: 120px;
-    }
-    .recomendacion-texto {
-        font-size: 18px;
+    .myclass-pic {
+        width: 150px;
+        height: 150px;
     }
 }
 
