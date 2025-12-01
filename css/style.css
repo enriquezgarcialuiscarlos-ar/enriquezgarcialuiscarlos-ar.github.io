@@ -1,246 +1,229 @@
+/* ==========================================
+   🔥 DARK + NEON GLOW THEME (BLUE/TURQUOISE)
+   ========================================== */
+
 :root {
-    --bg-main: #0A0A0F;
-    --bg-card: #12121A;
-    --bg-floating: rgba(18, 18, 26, 0.7);
-    --text-main: #E8E8E8;
-    --text-soft: #B8B8C8;
-    --accent: #00E5FF;
-    --accent2: #4D7CFF;
-    --border: #1E1E2A;
-    --shadow: rgba(0, 229, 255, 0.1);
+    --color-bg: #0A0F1F;            /* Fondo general */
+    --color-bg-soft: #111627;       /* Fondo suave para secciones */
+    --color-card: #151B2F;          /* Cards */
+    --color-accent: #00D9FF;        /* Neon azul/turquesa */
+    --color-accent-2: #1CFFFF;      /* Glow extra */
+    --color-text: #FFFFFF;          /* Texto principal */
+    --color-subtext: #A8B3CF;       /* Texto secundario */
+    --color-border: #1A2239;        /* Bordes */
+    --glow: 0px 0px 12px rgba(0, 217, 255, 0.6);
 }
 
-/* ================================
-   BODY
-   ================================ */
-body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: "Segoe UI", sans-serif;
-    margin: 0;
-    padding: 0;
+/* 🔥 Neon border reusable */
+.neon-border {
+    border: 1px solid var(--color-accent);
+    box-shadow: var(--glow);
+    transition: 0.3s ease;
 }
 
-/* ================================
-   NAVBAR GLASSMORPHISM
-   ================================ */
+.neon-border:hover {
+    box-shadow: 0px 0px 18px var(--color-accent-2);
+}
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
 .navbar {
-    background: var(--bg-floating);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem 2rem;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .navbar a {
-    color: var(--text-main);
-    margin-left: 20px;
-    font-size: 1.1rem;
-    transition: .3s;
+    color: var(--color-text);
 }
 
 .navbar a:hover {
-    color: var(--accent);
-    text-shadow: 0px 0px 10px var(--accent);
+    color: var(--color-accent);
+    text-shadow: var(--glow);
 }
 
-/* ================================
+/* ==========================================
    SECCIÓN PRINCIPAL
-   ================================ */
+   ========================================== */
+
 .myclass {
+    background-color: var(--color-bg);
     text-align: center;
+    color: var(--color-text);
     padding: 3rem 1rem;
 }
 
 .myclass-main h2 {
-    color: var(--accent);
-    font-size: 2rem;
+    color: var(--color-accent);
+    text-shadow: var(--glow);
+    font-size: 1.8rem;
 }
 
 .myclass-pic {
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
-    border: 4px solid var(--accent);
-    box-shadow: 0px 0px 20px rgba(0, 229, 255, 0.25);
+    border: 3px solid var(--color-accent);
+    box-shadow: var(--glow);
+    margin: 20px;
+    transition: 0.3s;
 }
 
-/* ================================
+.myclass-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 22px var(--color-accent-2);
+}
+
+/* ==========================================
    ABOUT ME
-   ================================ */
+   ========================================== */
+
 .about-me {
-    background-color: var(--bg-card);
-    padding: 40px 20px;
-    border-radius: 12px;
-    margin: 30px auto;
-    width: 90%;
-    box-shadow: 0 0 25px var(--shadow);
+    background-color: var(--color-bg-soft);
+    padding: 40px;
+    border-radius: 8px;
+    margin: 40px auto;
 }
 
 .seccion-titulo {
     font-size: 2.2rem;
-    color: var(--accent2);
-    text-align: center;
+    color: var(--color-accent);
+    text-shadow: var(--glow);
+    margin-bottom: 20px;
 }
 
 .seccion-texto {
-    margin-top: 15px;
     font-size: 1.2rem;
-    color: var(--text-soft);
-    line-height: 1.8;
+    color: var(--color-subtext);
+    max-width: 700px;
+    text-align: center;
 }
 
-/* ================================
+/* ==========================================
    EXPERIENCIA
-   ================================ */
+   ========================================== */
+
 .experiencia {
-    padding: 40px;
-    background-color: var(--bg-main);
+    background-color: var(--color-bg);
+    padding: 50px 20px;
 }
 
 .experiencia-columna {
-    background-color: var(--bg-card);
-    padding: 25px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    transition: 0.3s;
+    padding: 20px;
+    background-color: var(--color-card);
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 5px #000;
 }
 
 .experiencia-columna:hover {
-    background-color: #1B1B26;
-    box-shadow: 0px 0px 20px var(--shadow);
+    transform: translateY(-4px);
+    border: 1px solid var(--color-accent);
+    box-shadow: var(--glow);
+}
+
+.experiencia-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-accent);
 }
 
 .experiencia i {
-    color: var(--accent);
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    color: var(--color-accent);
+    margin-bottom: 10px;
 }
 
-/* ================================
+/* ==========================================
    PROYECTOS
-   ================================ */
+   ========================================== */
+
 .proyectos {
+    background-color: var(--color-bg-soft);
     padding: 40px;
 }
 
-.proyecto {
-    position: relative;
-}
-
-.proyectos img {
+.proyecto img {
     width: 100%;
     border-radius: 10px;
     transition: 0.3s ease;
-    opacity: 0.95;
-}
-
-.overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: .4s;
-    text-align: center;
-    color: var(--accent);
+    box-shadow: 0 0 10px #000;
 }
 
 .proyecto:hover img {
     opacity: 0.25;
+    filter: blur(2px);
+}
+
+.overlay {
+    opacity: 0;
+    transition: 0.3s;
 }
 
 .proyecto:hover .overlay {
     opacity: 1;
+    text-shadow: var(--glow);
 }
 
-/* ================================
+/* ==========================================
    BOTONES
-   ================================ */
+   ========================================== */
+
 .btn-info {
-    border: 2px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    transition: .3s;
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+    padding: 10px 25px;
+    border-radius: 100px;
+    font-weight: bold;
+    transition: 0.3s ease;
+    box-shadow: var(--glow);
 }
 
 .btn-info:hover {
-    background-color: var(--accent);
-    color: #000;
-    box-shadow: 0px 0px 15px var(--accent);
+    background-color: var(--color-accent);
+    color: #000B14;
+    box-shadow: 0 0 18px var(--color-accent-2);
 }
 
-/* ================================
-   CARDS
-   ================================ */
+/* ==========================================
+   TIPS (CARDS)
+   ========================================== */
+
 .tips .card {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border);
-    box-shadow: 0px 0px 15px var(--shadow);
+    background-color: var(--color-card);
+    box-shadow: var(--glow);
     border-radius: 10px;
+    color: var(--color-text);
 }
 
-/* ================================
-   CONTACTO
-   ================================ */
-.contact .rectangulo {
-    background-color: var(--accent2);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 20px rgba(77, 124, 255, 0.25);
-}
-
-.contact button {
-    color: var(--text-main);
-    border: 2px solid var(--text-main);
-    padding: 1.2em 2em;
-    border-radius: 100px;
-    transition: 0.3s;
-}
-
-.contact button:hover {
-    background-color: var(--bg-card);
-}
-
-/* ================================
+/* ==========================================
    FOOTER
-   ================================ */
+   ========================================== */
+
 footer {
-    background-color: var(--bg-main);
-    padding: 50px;
+    background-color: var(--color-bg);
+    padding: 40px;
     text-align: center;
+    color: var(--color-subtext);
 }
 
 .icons-sn a {
-    border: 2px solid var(--border);
+    border: 2px solid var(--color-accent);
     border-radius: 50%;
-    padding: 12px;
+    padding: 10px;
     transition: 0.3s;
+    box-shadow: var(--glow);
 }
 
 .icons-sn a:hover {
-    background-color: var(--border);
+    background-color: var(--color-accent);
+    color: #000;
+    box-shadow: 0px 0px 20px var(--color-accent-2);
 }
 
-.icons-sn a:hover i {
-    color: var(--accent);
-}
 
-/* ================================
-   RESPONSIVO
-   ================================ */
-@media screen and (max-width: 700px) {
-    .myclass-pic {
-        width: 150px;
-        height: 150px;
-    }
-}
 
 
